@@ -1,5 +1,81 @@
-# Vue 3 + TypeScript + Vite
+# Account Manager
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Форма управления учетными записями на **Vue 3 + TypeScript + Pinia + Tailwind CSS**.  
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+Проект позволяет:
+
+- Добавлять, редактировать и удалять учетные записи.  
+- Управлять метками (через `;`).  
+- Выбирать тип записи: LDAP или Локальная.  
+- Валидировать обязательные поля (`login`, `password`).  
+- Сохранять учетные записи в localStorage.  
+- Управлять видимостью пароля через кнопку-переключатель.  
+- Метки преобразуются в массив объектов `{ text: "метка" }`.  
+
+**Стек технологий:**
+
+- Frontend: Vue 3 + Composition API  
+- Язык: TypeScript  
+- Состояние: Pinia  
+- Стили: Tailwind CSS  
+- Сборка: Vite  
+
+**Установка и запуск проекта:**
+
+1. Клонируем репозиторий:
+
+```bash
+git clone https://github.com/Barahten/account-manager.git
+cd account-manager
+```
+
+2. Устанавливаем зависимости:
+```bash
+npm install
+```
+
+3. Запускаем дев-среду:
+```bash
+npm run dev
+```
+
+Открываем проект в браузере:
+
+http://localhost:5173/
+
+
+Изменения в коде применяются автоматически благодаря HMR.
+
+Структура проекта:
+```
+src/
+ ├─ components/   # Vue-компоненты
+ ├─ stores/       # Pinia store
+ ├─ types/        # Типы TypeScript
+ ├─ assets/
+    ├─ css/
+        └─ style.css     # Tailwind CSS
+```
+
+**Особенности интерфейса:**
+
+* Все поля расположены в одну строку с помощью flex.
+
+* Если выбран LDAP, поле пароля скрывается, а поле логина растягивается на всю ширину.
+
+* Для локальных учетных записей пароль можно показать/скрыть.
+
+* Валидация обязательных полей с подсветкой ошибок.
+
+
+**Пример использования:**
+
+* Нажмите `+ Добавить`, чтобы создать новую учетную запись.
+
+* Заполните поля Логин и Пароль (если выбран тип "Локальная").
+
+* После потери фокуса данные будут валидированы и сохранены в localStorage.
+
+* Используйте кнопку `Удалить`, чтобы убрать учетную запись.
+
+* Для локальных паролей можно переключать видимость через `Показать/Скрыть` кнопку.
