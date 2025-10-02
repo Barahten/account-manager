@@ -50,8 +50,11 @@ http://localhost:5173/
 ```
 src/
  ├─ components/   # Vue-компоненты
+    └─ AccountManager.vue
  ├─ stores/       # Pinia store
+    └─ accounts.ts
  ├─ types/        # Типы TypeScript
+    └─ account.ts
  ├─ assets/
     ├─ css/
         └─ style.css     # Tailwind CSS
